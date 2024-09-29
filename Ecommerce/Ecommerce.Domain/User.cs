@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace Ecommerce.Domain
 		public string? Password { get; set; }
 		public ICollection<Order> Orders { get; set; }
 		public ICollection<Review> Reviews { get; set; }
+		[NotMapped]
 		public Cart Cart { get; set; }
 	}
 }

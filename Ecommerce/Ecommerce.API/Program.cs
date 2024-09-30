@@ -1,3 +1,4 @@
+using Ecommerce.Application.Repository;
 using Ecommerce.Infrastructure.Presistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Graph.Models.ExternalConnectors;
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DBContextApplication>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
+builder.Services.AddScoped<ICategoryRepository, ICategoryRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

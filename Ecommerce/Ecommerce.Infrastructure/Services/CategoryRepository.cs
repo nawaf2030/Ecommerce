@@ -22,5 +22,10 @@ namespace Ecommerce.Infrastructure.Services
 		{
 			await _context.Categories.AddAsync(new Category() { Id=1, Name = "Cat 1"});
 		}
-	}
+
+        public Task<Category> GetCategoryById(int id)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

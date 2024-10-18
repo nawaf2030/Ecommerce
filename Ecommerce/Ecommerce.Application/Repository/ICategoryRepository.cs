@@ -10,5 +10,6 @@ namespace Ecommerce.Application.Repository
 	public interface ICategoryRepository
 	{
 		public Task createCategory(Category category);
+		public Task<Category> GetCategoryById(int id);
 	}
 }
